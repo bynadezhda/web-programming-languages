@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <meta name="viewport"
+ content="width=device-width, initial-scale=1.0">
+ <title>ICS6 Bootstrap</title>
+ <link href="http://e-learning.bmstu.ru/moodle/pluginfile.php/7546/mod_folder/content/0/bootstrap.min.css" rel="stylesheet">
+ <style>
+ html {
+ position: relative;
+ min-height: 100%;
+ }
+
+ .colortext {
+   color: green;
+ }
+ .textfont {
+   color: red;
+   font-style: italic;
+ }
+ .textfonter {
+   color: blue;
+   font-size: 20px;
+   font-family: fantasy;
+ }
+ body {
+ margin-bottom: 40px;
+ }
+ main {
+ margin-top: 15px;
+ }
+ footer {
+ height: 40px;
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ }
+ .my-primary {
+ background-color: tomato;
+ color: white;
+ }
+ </style>
+</head>
+<body>
+ <header>
+ <nav class="navbar navbar-expand-lg navbar-dark my-primary">
+ <a class="navbar-brand" href="#">Navbar</a>
+ <ul class="navbar-nav mr-auto">
+ <li class="nav-item active">
+ <a class="nav-link" href="#">Home
+ <span class="sr-only">(current)</span>
+ </a>
+ </li>
+ <li class="nav-item">
+   <a class="nav-link" href="#">Link</a>
+ </li>
+ </ul>
+ </nav>
+ </header>
+ <main class="container">
+ <div class="row">
+ <div class="col-4">
+ <img src=" http://e-learning.bmstu.ru/moodle/pluginfile.php/7546/mod_folder/content/0/avatar.jpg" alt="avatar" width="150" height="150">
+ </div>
+ <div class="col-8">
+ <p>Любой текст</p>
+ </div>
+ </div>
+
+ <div class="row">
+ <div class="col-4">
+   <form>
+   <table>
+       <tr>
+       <td>Имя: </td><td><input type="text" class="form-control" name="fname"></td>
+       </tr>
+       <tr>
+         <td>Фамилия: </td><td><input type="text"class="form-control" name="lname" ></td>
+       </tr>
+       <tr>
+         <td>Отчество: </td> <td><input type="text" class="form-control" name="sname"></td>
+       </tr>
+       <tr>
+         <td>Дата рождения: </td><td><input type="date" class="form-control" name ="date"></td>
+       </tr>
+       <tr>
+        <td>Пол: </td><td><input type="radio" name="gender" value="м"/>м
+        <input type="radio" name="gender" value="ж"/>ж</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><input type="submit" class="form-control" value="Отправить" /></td>
+      </tr>
+   </table>
+     </form>
+ </div>
+ <div class="col-4">
+   <table class="table" width="100%">
+<thead>
+    <tr>
+    <th rowspan="8">ВТ</th>
+    <th>Время</th>
+    <th width="40%">ЧС</th>
+    <th>ЗН</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>08:30-10:05</td> <td></td> <td></td>
+    </tr>
+    <tr>
+    <td>10:15-11:50</td> <td colspan="2" align="center"><em>(лек)</em>Элективный курс по физической культуре и </br> спорту <em>Каф</em></td>
+    </tr>
+    <tr>
+    <td>12:00-13:35</td> <td colspan="2" align="center"><em>(лек)</em>Языки интернет-программирования</td>
+    </tr>
+    <tr>
+    <td>13:50-15:25</td> <td colspan="2" align="center"><em>(лек)</em>Электротехника</td>
+    </tr>
+    <tr>
+    <td>15:40-17:15</td> <td></td> <td align="center"><em>(сем)</em>Электротехника</td>
+    </tr>
+    <tr>
+    <td>17:25-19:00</td><td></td><td></td>
+    </tr>
+    <tr>
+    <td>19:10-20:45</td><td></td><td></td>
+    </tr>
+    </tbody>
+    </table>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col">
+   <p>Lorem ipsum <span class = "colortext">dolor sit amet</span>, consectetur adipiscing elit,
+   sed do eiusmod <span class = "textfont"> tempor incididunt</span> ut labore et dolore magna aliqua.
+    Ut enim ad minim <span class = "textfonter">veniam, quis nostrud exercitation  </span>ullamco laboris
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+   id est laborum.</p>
+ </div>
+ </div>
+ </main>
+ <footer class="my-primary">
+ <div class="container">
+ <p class="footer-text">Footer</p>
+ </div>
+ </footer>
+</body>
+</html>

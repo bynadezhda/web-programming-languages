@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+
+<head>
+    <title>Lab8</title>
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="J9KTvcy7yjwHfabknny1RknJyoKktnrLnVDPtgyfvNxIcw0IJBHk9C4OstO+gz5kUZ1aUsDTcQxHpdDZ+ivKSA==">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <link rel="stylesheet" media="all" href="/assets/application.debug-7e7f59f62d910243026d2129bc394eff0bcc76485385ea4ac9e9f6df60ce32f1.css" data-turbolinks-track="reload">
+    
+    <script>
+    output_url= location.protocol + "//" + location.host + "/index/output.json"
+    function send_query(){
+      var frm = document.forms.input_form
+      var param_str = `?n=${frm.n.value}&sequence=${frm.sequence.value}&commit=OK`;
+
+      if (param_str == "") return false;
+      var my_JSON_object = {};
+      var http_request = new XMLHttpRequest();
+      http_request.open("GET", output_url+param_str, true);
+      http_request.onreadystatechange = function () {
+        var done = 4, ok = 200;
+        if (http_request.readyState == done &&
+          http_request.status == ok) {
+            my_JSON_object = JSON.parse(http_request.responseText);
+            show_result(my_JSON_object);
+          }
+      };
+      http_request.send(null);
+      return false;
+    }
+
+    function create_table(result){ 
+      const table = document.getElementById("result_table");
+      var row = document.createElement ("tr");
+
+      row.innerHTML = `<th>#</th><th>Sequence</th>`
+      table.append(row);
+
+      for (var i=0; i<result.length; i++)
+      {
+        row = document.createElement ("tr");
+        row.innerHTML = `<td>${(i+1)}</td><td>${result[i]}</td>`
+        table.append(row);
+      }
+    }
+
+    function show_result(data){
+      if (typeof(data.value) != "string")
+      create_table(data.value);
+      else 
+      {
+        var result = document.getElementById("result_p");
+        result.innerHTML =  data.value;
+      }
+    
+    }
+    </script>
+    
+</head>
+
+<body>
+    <h1>Sequence of numbers</h1>
+
+<form id="input_form" accept-charset="UTF-8" method="get">
+ <p> <label for="Enter_the_number_of_numbers:_">Enter the number of numbers: </label> </p>
+ <p> <input type="text" name="n" id="n"> </p>
+ <p> <label for="Enter_the_numbers:_">Enter the numbers: </label> </p>
+ <p><input type="text" name="sequence" id="sequence"> </p>
+ <p><input type="submit" name="commit" value="OK" data-disable-with="OK" onclick="return send_query();"></p>
+ <p id="result_p"> </div>
+ <table id="result_table" border="1"></table>
+</form>
+  
+
+</body>

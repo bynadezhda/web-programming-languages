@@ -1,0 +1,18 @@
+<h1>Result</h1>
+
+<% if @result == nil%>
+    <p>Error. You did not complete the field. Or inconsistency in the amount of data. Or invalid input</p>
+<% elsif @result.empty? %>
+    <p>There are not sequences</p>
+<% else %>
+    <table border="1">
+    <th>#</th>
+    <th>Sequence</th>
+    <% @result.each_with_index do |s, i| %>
+        <tr><td><%= i=i+1 %></td><td><%= s.join(", ") %></td></tr>
+    <% end %>  
+    </table>
+    <p>Max: <%= @result.max.join(", ") %></p>
+    <p>Number of sequence: <%= @result.max.length%></p>
+    <%= link_to 'Back', :index_input %>
+<% end %>

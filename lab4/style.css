@@ -1,0 +1,20 @@
+.addingButton {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.rare {
+    background-color: #d6ddfd;
+}
+div {
+    margin-bottom: 2rem;
+}
+#nameOfTitle{
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+body{
+    background-color: #343a40;
+}
+
